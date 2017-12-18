@@ -73,9 +73,6 @@ const getData = (type, row) => {
 		case 'ip':
 			return random.ip();
 
-		case 'ipv6':
-			return random.ipv6();
-
 		case 'bool':
 			return random.boolean();
 
