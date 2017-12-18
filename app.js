@@ -50,7 +50,7 @@ const getData = (type) => {
 			return random.city();
 
 		case 'country':
-			return random.country();
+			return random.country().replace(/,/g, '');
 
 		case 'countrycode':
 			return random.countrycode();
@@ -99,9 +99,6 @@ const getData = (type) => {
 				start: args[0] || '2007-01-01',
 				end: args[1] || '2027-12-31'
 			});
-
-		case 'sentence':
-			return random.sentence().replace(/,/g, '');
 
 		default:
 			return null;
