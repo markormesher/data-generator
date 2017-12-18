@@ -19,7 +19,7 @@ const randomIntBetween = (min, max) => {
 	return Math.floor(Math.random() * (max - min)) + min;
 };
 
-const getData = (type) => {
+const getData = (type, row) => {
 	const typeChunks = type.split('+');
 	type = typeChunks[0];
 	const args = typeChunks.slice(1);
@@ -27,6 +27,12 @@ const getData = (type) => {
 	switch (type) {
 		case 'int':
 			return randomIntBetween((args[0] || 1), (args[1] || 100));
+
+		case 'increasing':
+			return row;
+
+		case 'increasing1':
+			return row + 1;
 
 		case 'uuid':
 			return uuid.v4();
@@ -121,7 +127,7 @@ app.get('/data/:types', (req, res) => {
 	for (let i = 0; i < types.length; ++i) {
 		outputs.push([]);
 		for (let j = 0; j < count; ++j) {
-			outputs[i].push(getData(types[i]));
+			outputs[i].push(getData(types[i], j));
 		}
 	}
 
