@@ -104,7 +104,7 @@ const getData = (type, row) => {
 			return random.date({
 				start: args[0] || '2007-01-01',
 				end: args[1] || '2027-12-31'
-			});
+			}).toISOString();
 
 		default:
 			return null;
