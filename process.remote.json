@@ -1,9 +1,0 @@
-{
-	"apps": [
-		{
-			"name": "data-generator",
-			"cwd": "/var/node/data.markormesher.co.uk/",
-			"script": "./app.js"
-		}
-	]
-}

@@ -141,7 +141,7 @@ app.get('/data/:types', (req, res) => {
 		}
 	}
 
-	res.send(output, 200);
+	res.send(output);
 });
 
-app.listen(3007, () => { console.log('Listening on 3007'); })
+app.listen(3000, () => { console.log('Listening on 3000'); })

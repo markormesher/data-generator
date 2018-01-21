@@ -1,9 +1,0 @@
-{
-	"apps": [
-		{
-			"name": "data-generator",
-			"cwd": ".",
-			"script": "./app.js"
-		}
-	]
-}
