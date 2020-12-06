@@ -10,7 +10,7 @@ services:
       - 3000
     labels:
       - traefik.enable=true
-      - traefik.http.routers.data.rule=Host(`data.markormesher.co.uk`)
+      - traefik.http.routers.data.rule=Host(`data.markormesher.co.uk`, `www.data.markormesher.co.uk`)
       - traefik.http.routers.data.tls.certresolver=letsencrypt
       - traefik.docker.network=traefik_default
 
