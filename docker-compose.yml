@@ -4,5 +4,17 @@ services:
   app:
     build: ./app
     restart: always
+    networks:
+      - traefik
     ports:
-      - "3007:3000"
+      - 3000
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.data.rule=Host(`data.markormesher.co.uk`)
+      - traefik.http.routers.data.tls.certresolver=letsencrypt
+      - traefik.docker.network=traefik_default
+
+networks:
+  traefik:
+    external:
+      name: traefik_default
